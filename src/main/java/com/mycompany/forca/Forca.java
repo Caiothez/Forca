@@ -104,6 +104,6 @@ public class Forca {
         }
         forca.escreveBoneco();
         System.out.println("A palavra era " + forca.getPalavra());
-        
+        //jdvhbskjvns
      }
 }
