@@ -82,7 +82,7 @@ public final class Jogo {
    
     
     public void imprime(){
-        System.out.println("");
+       /* System.out.println("");
         System.out.println("");
         System.out.println("");
         System.out.println("");
@@ -107,14 +107,13 @@ public final class Jogo {
         
         System.out.println("");
         
-        System.out.println("");
+        System.out.println("");*/
         
-        this.escreveBoneco();
+        /*this.escreveBoneco();
         System.out.println("");
         System.out.println("");
-        System.out.println("");
+        System.out.println("");*/
         System.out.println("Tentativas: " + this.tentativas);
-        
         if(!this.tentativasErradas.isEmpty()){
             System.out.println("");
             System.out.println("Letras erradas: ");
@@ -134,13 +133,13 @@ public final class Jogo {
             }
             
         }
+        /*System.out.println("");
         System.out.println("");
         System.out.println("");
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        System.out.println("");*/
     }
     
     public void tentaLetra(char letra){
@@ -204,5 +203,38 @@ public final class Jogo {
         System.out.println("Perdeuuuuuuu!!!!!!");
     }
     
+    ///////////////////////////////// Novas Funções /////////////////////////////////////////////
     
+    public String obterEstadoJogo() {
+    StringBuilder resultado = new StringBuilder();
+    
+    // Adiciona as tentativas
+    //resultado.append("Tentativas: ").append(this.tentativas).append("\n");
+    
+    // Adiciona letras erradas, se houver
+    if (!this.tentativasErradas.isEmpty()) {
+        resultado.append("\nLetras erradas: ");
+        for (int i = 0; i < this.tentativasErradas.size(); i++) {
+            resultado.append(" ").append(this.tentativasErradas.get(i));
+        }
+        resultado.append("\n");
+    }
+    
+    // Adiciona o estado da palavra
+    resultado.append("\nPalavra: ");
+    for (int i = 0; i < this.palavra.length(); i++) {
+        if (this.acertados[i]) {
+            resultado.append(" ").append(this.palavra.charAt(i));
+        } else {
+            resultado.append(" _");
+        }
+    }
+    
+    // Retorna o resultado como string
+    return resultado.toString();
+}
+    public String TentativasRestantes() {
+    return "Tentativas restantes: " + this.tentativas;
+}
+
 }

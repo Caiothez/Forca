@@ -5,7 +5,7 @@ package com.mycompany.forca;
 import java.util.Scanner;
 /**
  *
- * @author nicol
+ * @author Caio
  */
 public class Forca {
      public static void main(String[] args) {
@@ -104,7 +104,5 @@ public class Forca {
         }
         forca.escreveBoneco();
         System.out.println("A palavra era " + forca.getPalavra());
-        //jdvhbskjvns
-        //caio é gay
      }
 }
