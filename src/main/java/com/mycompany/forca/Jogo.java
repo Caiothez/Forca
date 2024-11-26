@@ -16,6 +16,7 @@ public final class Jogo {
     private final boolean[] acertados;
     private int tentativas;
     private final ArrayList<Character> tentativasErradas = new ArrayList<>();
+    public int ganhou=3;
     
     public Jogo(String palavra, int tentativas){
         int size = palavra.length();
@@ -183,25 +184,19 @@ public final class Jogo {
             }
         }
         if(!temErro){
-            anunciaVitoria();
+           this.ganhou = 1;
             return true;
         }
         
         if(this.tentativas <= 0){
-            this.anunciaDerrota();
+          this.ganhou = 0;
             return true;
         }
         
         return false;
     }
     
-    public void anunciaVitoria(){
-        System.out.println("Vitoriaaaaaaaa!!!!!!");
-    }
-    
-    public void anunciaDerrota(){
-        System.out.println("Perdeuuuuuuu!!!!!!");
-    }
+
     
     ///////////////////////////////// Novas Funções /////////////////////////////////////////////
     
@@ -229,7 +224,12 @@ public final class Jogo {
             resultado.append(" _");
         }
     }
-    
+    verificaSeAcabou();
+    if (this.ganhou == 1){
+        System.out.println("Vitoriaaaaaaaa!!!!!!");   
+    }else if(this.ganhou == 0){
+        System.out.println("Perdeuuuuuuu!!!!!!");
+    }
     // Retorna o resultado como string
     return resultado.toString();
 }

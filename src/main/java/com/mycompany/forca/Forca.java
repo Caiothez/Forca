@@ -89,11 +89,11 @@ public class Forca {
             System.out.println(palavraAtual);
             if(palavraAtual.length() > 1){
                 if(forca.chuta(palavraAtual)){
-                    forca.anunciaVitoria();
+                   
                     break;
                 }
                 else{
-                    forca.anunciaDerrota();
+                   
                     break;
                 }
             }
