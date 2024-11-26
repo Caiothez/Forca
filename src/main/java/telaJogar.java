@@ -108,12 +108,12 @@ public class telaJogar extends javax.swing.JFrame {
         letraO = new javax.swing.JButton();
         letraP = new javax.swing.JButton();
         palavraTxt = new javax.swing.JTextField();
-        jButton27 = new javax.swing.JButton();
         tentativasLb = new javax.swing.JLabel();
         fimTela = new javax.swing.JPanel();
         botaoContinuar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         botaoSair = new javax.swing.JButton();
+        letrasIncorretas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -313,13 +313,6 @@ public class telaJogar extends javax.swing.JFrame {
             }
         });
 
-        jButton27.setText("Sortear");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
-            }
-        });
-
         tentativasLb.setText("Tentativas: 5");
 
         fimTela.setBackground(new java.awt.Color(153, 153, 153));
@@ -356,34 +349,37 @@ public class telaJogar extends javax.swing.JFrame {
         fimTelaLayout.setVerticalGroup(
             fimTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fimTelaLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoContinuar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoSair)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        letrasIncorretas.setText("Letras Incorretas: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                        .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(148, 148, 148)
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel2)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2))
-                            .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(tentativasLb)))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(letrasIncorretas, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tentativasLb))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 24, Short.MAX_VALUE)
@@ -425,26 +421,21 @@ public class telaJogar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(letraE, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(letraF, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraG, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraH, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraI, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraJ, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraK, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraL, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(letraM, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jButton27)))))
+                        .addComponent(letraF, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraG, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraH, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraI, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraJ, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraK, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraL, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(letraM, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -456,13 +447,13 @@ public class telaJogar extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tentativasLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
+                .addComponent(letrasIncorretas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(palavraTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton27)
-                .addGap(19, 19, 19)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(letraG)
                     .addComponent(letraH)
@@ -503,16 +494,11 @@ public class telaJogar extends javax.swing.JFrame {
         //forca.imprime();
     }//GEN-LAST:event_palavraTxtActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
-        palavraTxt.setText(forca.obterEstadoJogo());
-       // fimTela.setVisible(true); teste para a tela do Fim
-    }//GEN-LAST:event_jButton27ActionPerformed
-
     private void letraA(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraA
         // TODO add your handling code here:
         forca.tentaLetra('A');
-        tentativasLb.setText(forca.TentativasRestantes());  
+        tentativasLb.setText(forca.TentativasRestantes()); 
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraA.setEnabled(false);
     }//GEN-LAST:event_letraA
@@ -520,7 +506,8 @@ public class telaJogar extends javax.swing.JFrame {
     private void letraBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraBActionPerformed
         // TODO add your handling code here:
         forca.tentaLetra('B');
-        tentativasLb.setText(forca.TentativasRestantes());  
+        tentativasLb.setText(forca.TentativasRestantes()); 
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraB.setEnabled(false);
     }//GEN-LAST:event_letraBActionPerformed
@@ -528,7 +515,8 @@ public class telaJogar extends javax.swing.JFrame {
     private void letraCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraCActionPerformed
         // TODO add your handling code here:
         forca.tentaLetra('C');
-        tentativasLb.setText(forca.TentativasRestantes());  
+        tentativasLb.setText(forca.TentativasRestantes()); 
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraC.setEnabled(false);       
     }//GEN-LAST:event_letraCActionPerformed
@@ -537,6 +525,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('D');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraD.setEnabled(false);
     }//GEN-LAST:event_letraDActionPerformed
@@ -545,6 +534,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('E');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraE.setEnabled(false);
     }//GEN-LAST:event_letraEActionPerformed
@@ -553,6 +543,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('F');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraF.setEnabled(false);
     }//GEN-LAST:event_letraFActionPerformed
@@ -561,6 +552,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('G');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraG.setEnabled(false);
     }//GEN-LAST:event_letraGActionPerformed
@@ -569,6 +561,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('H');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraH.setEnabled(false);
     }//GEN-LAST:event_letraHActionPerformed
@@ -577,6 +570,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('I');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraI.setEnabled(false);
     }//GEN-LAST:event_letraIActionPerformed
@@ -585,6 +579,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('J');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraJ.setEnabled(false);
     }//GEN-LAST:event_letraJActionPerformed
@@ -593,6 +588,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('K');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraK.setEnabled(false);
     }//GEN-LAST:event_letraKActionPerformed
@@ -601,6 +597,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('L');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraL.setEnabled(false);
     }//GEN-LAST:event_letraLActionPerformed
@@ -609,6 +606,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('M');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraM.setEnabled(false);
     }//GEN-LAST:event_letraMActionPerformed
@@ -617,6 +615,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('N');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraN.setEnabled(false);
     }//GEN-LAST:event_letraNActionPerformed
@@ -625,6 +624,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('O');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraO.setEnabled(false);
     }//GEN-LAST:event_letraOActionPerformed
@@ -633,6 +633,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('P');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraP.setEnabled(false);
     }//GEN-LAST:event_letraPActionPerformed
@@ -641,6 +642,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('Q');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraQ.setEnabled(false);
     }//GEN-LAST:event_letraQActionPerformed
@@ -649,6 +651,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('R');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraR.setEnabled(false);
     }//GEN-LAST:event_letraRActionPerformed
@@ -657,6 +660,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('S');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraS.setEnabled(false);
     }//GEN-LAST:event_letraSActionPerformed
@@ -665,6 +669,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('T');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraT.setEnabled(false);
     }//GEN-LAST:event_letraTActionPerformed
@@ -673,6 +678,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('U');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraU.setEnabled(false);
     }//GEN-LAST:event_letraUActionPerformed
@@ -681,6 +687,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('V');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraV.setEnabled(false);
     }//GEN-LAST:event_letraVActionPerformed
@@ -689,6 +696,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('W');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraW.setEnabled(false);
     }//GEN-LAST:event_letraWActionPerformed
@@ -697,6 +705,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('X');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraX.setEnabled(false);
     }//GEN-LAST:event_letraXActionPerformed
@@ -705,6 +714,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('Y');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraY.setEnabled(false);
     }//GEN-LAST:event_letraYActionPerformed
@@ -713,6 +723,7 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
         forca.tentaLetra('Z');
         tentativasLb.setText(forca.TentativasRestantes());  
+        letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraZ.setEnabled(false);
     }//GEN-LAST:event_letraZActionPerformed
@@ -724,7 +735,9 @@ public class telaJogar extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+        
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -760,7 +773,6 @@ public class telaJogar extends javax.swing.JFrame {
     private javax.swing.JButton botaoContinuar;
     private javax.swing.JButton botaoSair;
     private javax.swing.JPanel fimTela;
-    private javax.swing.JButton jButton27;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -790,6 +802,7 @@ public class telaJogar extends javax.swing.JFrame {
     private javax.swing.JButton letraX;
     private javax.swing.JButton letraY;
     private javax.swing.JButton letraZ;
+    private javax.swing.JLabel letrasIncorretas;
     private javax.swing.JTextField palavraTxt;
     private javax.swing.JLabel tentativasLb;
     // End of variables declaration//GEN-END:variables

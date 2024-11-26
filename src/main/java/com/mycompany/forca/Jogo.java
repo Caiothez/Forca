@@ -16,7 +16,7 @@ public final class Jogo {
     private final boolean[] acertados;
     private int tentativas;
     private final ArrayList<Character> tentativasErradas = new ArrayList<>();
-    public int ganhou=3;
+    private int ganhou=3;
     
     public Jogo(String palavra, int tentativas){
         int size = palavra.length();
@@ -29,6 +29,14 @@ public final class Jogo {
     
     public String getPalavra(){
         return this.palavra;
+    }
+
+    public int getGanhou() {
+        return ganhou;
+    }
+
+    public void setGanhou(int ganhou) {
+        this.ganhou = ganhou;
     }
     
     public void verificaEspacos(){
@@ -203,38 +211,33 @@ public final class Jogo {
     public String obterEstadoJogo() {
     StringBuilder resultado = new StringBuilder();
     
-    // Adiciona as tentativas
-    //resultado.append("Tentativas: ").append(this.tentativas).append("\n");
-    
-    // Adiciona letras erradas, se houver
-    if (!this.tentativasErradas.isEmpty()) {
-        resultado.append("\nLetras erradas: ");
-        for (int i = 0; i < this.tentativasErradas.size(); i++) {
-            resultado.append(" ").append(this.tentativasErradas.get(i));
-        }
-        resultado.append("\n");
-    }
-    
     // Adiciona o estado da palavra
     resultado.append("\nPalavra: ");
     for (int i = 0; i < this.palavra.length(); i++) {
         if (this.acertados[i]) {
-            resultado.append(" ").append(this.palavra.charAt(i));
+            resultado.append(" ").append(this.palavra.charAt(i));           
         } else {
             resultado.append(" _");
         }
     }
     verificaSeAcabou();
-    if (this.ganhou == 1){
-        System.out.println("Vitoriaaaaaaaa!!!!!!");   
-    }else if(this.ganhou == 0){
-        System.out.println("Perdeuuuuuuu!!!!!!");
+    if(this.ganhou == 1){
+        System.out.println("ganhouuuuuuuuuu!!!!!!");
+    } else if(this.ganhou == 0){
+        System.out.println("perdeuuuuuuuuuuu!!!!!!");
     }
     // Retorna o resultado como string
     return resultado.toString();
 }
-    public String TentativasRestantes() {
+public String TentativasRestantes() {
     return "Tentativas restantes: " + this.tentativas;
 }
-
+public String letraIncorretas() {
+    StringBuilder incorretas = new StringBuilder();
+    incorretas.append("Letras Incorretas: ");
+    for (int i = 0; i < this.tentativasErradas.size(); i++) {
+        incorretas.append(" ").append(this.tentativasErradas.get(i));            
+    }
+    return incorretas.toString();
+}
 }
