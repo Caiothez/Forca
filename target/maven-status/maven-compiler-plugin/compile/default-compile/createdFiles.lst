@@ -1,7 +1,10 @@
 com\mycompany\forca\Jogo.class
+com\mycompany\forca\conexao_teste$1.class
 telaJogar$3.class
+com\mycompany\forca\conexaoSQL.class
 telaJogar$23.class
 telaJogar$8.class
+com\mycompany\forca\conexao_teste.class
 telaJogar$13.class
 telaJogar.class
 telaJogar$28.class
@@ -18,10 +21,12 @@ telaJogar$27.class
 telaJogar$9.class
 telaJogar$29.class
 telaJogar$20.class
+com\mycompany\forca\conexao_teste$2.class
 telaJogar$14.class
 telaJogar$4.class
 telaJogar$1.class
 telaJogar$24.class
+com\mycompany\forca\conexao_teste$3.class
 telaJogar$26.class
 telaJogar$11.class
 telaJogar$16.class
