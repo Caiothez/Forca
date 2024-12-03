@@ -3,63 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 import com.mycompany.forca.Jogo;
+import com.mycompany.forca.conexaoSQL;
+import com.mycompany.forca.conexao_teste;
+import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Caio
  */
 public class telaJogar extends javax.swing.JFrame {
-    String[] animais = {
-            "Abelha", "Avestruz", "Baleia", "Búfalo", "Cachorro",
-            "Cabra", "Cavalo", "Cervo", "Coelho", "Elefante",
-            "Foca", "Formiga", "Galo", "Gato", "Girafa",
-            "Hipopotamo", "Jacaré", "Jaguatirica", "Javali", "Leão",
-            "Macaco", "Mula", "Onça", "Ornitorrinco", "Paca",
-            "Pato", "Peixe", "Porco", "Puma", "Rato",
-            "Rinoceronte", "Sapo", "Serpente", "Tigre", "Touro",
-            "Urso", "Veado", "Vaca", "Vento", "Zebra",
-            "Cavalo-marinho", "Pinguim", "Polvo", "Peixe-boi", "Robalo",
-            "Cobra", "Paca", "Pangolim", "Bicho-preguiça", "Cacatua"
-        };
-         
-       String[] herois = {
-            // Marvel
-            "Homem-Aranha", "Homem de Ferro", "Capitão América", "Thor", "Hulk",
-            "Viúva Negra", "Pantera Negra", "Doutor Estranho", "Deadpool", "Wolverine",
-            "Capitã Marvel", "Homem-Formiga", "Cavaleiro da Lua", "Gavião Arqueiro", "Jessica Jones",
-            "Luke Cage", "Justiceiro", "Blade", "Surfista Prateado", "Nova",
-            "Motoqueiro Fantasma", "Tempestade", "Groot", "Guardiões da Galáxia", "Star-Lord",
-            "Drax", "Mantis", "Nebulosa", "Yondu", "Colossus",
-            "Gambit", "Noturno", "Rouge", "Psylocke", "Emma Frost",
-            "Magneto", "Mística", "Dentes de Sabre", "Jean Grey", "Ciclope",
-            "Homem-Morcego", "Super-Homem", "Mulher-Maravilha", "Flash", "Aquaman",
-            "Lanterna Verde", "Batman", "Robin", "Mulher-Gato", "Coringa"
-        };
-          
-          String[] cidades = {
-            "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Brasília", "Salvador",
-            "Fortaleza", "Curitiba", "Manaus", "Recife", "Porto Alegre",
-            "Belém", "São Luís", "Maceió", "Natal", "João Pessoa",
-            "Aracaju", "Campo Grande", "Cuiabá", "Teresina", "Vitória",
-            "Palmas", "Boa Vista", "Macapá", "São Bernardo do Campo", "Santos",
-            "Guarulhos", "Osasco", "Diadema", "Jundiaí", "Sorocaba",
-            "Ribeirão Preto", "Campinas", "Piracicaba", "Londrina", "Marília",
-            "São José dos Campos", "Taubaté", "Jaboatão dos Guararapes", "Canoas", "Joinville",
-            "Blumenau", "São Carlos", "Mogi das Cruzes", "Bauru", "Itapetininga",
-            "Maringá", "Uberlândia", "Divinópolis", "Lages", "Pelotas",
-            "Santarém", "Caruaru", "São José", "Palhoça", "Itaúna"
-        };
-          String[] times = {
-            "Flamengo", "Palmeiras", "São Paulo", "Santos", "Corinthians",
-            "Vasco da Gama", "Fluminense", "Botafogo", "Grêmio", "Internacional",
-            "Cruzeiro", "Atlético Mineiro", "Bahia", "Sport", "Náutico",
-            "Fortaleza", "Ceará", "Atlético Paranaense", "Paraná", "Goiás",
-            "Atlético Goianiense", "Juventude", "Figueirense", "Chapecoense", "Avaí",
-            "Vitória", "Ponte Preta", "Bragantino", "Guarani", "São Caetano",
-            "Portuguesa", "Joinville", "Paysandu", "Remo", "Santa Cruz",
-            "ABC", "XV de Piracicaba", "CSA", "São Bento", "Tombense"
-        };
-        String palavra = animais[(int)(Math.random() * 50)];
+    
+    conexaoSQL objCon = new conexaoSQL();
+  
+        //String palavra = animais[(int)(Math.random() * 50)];
+        
+        String palavra = Sorteia();
+        
         Jogo forca = new Jogo(palavra, 5);
         
     /**
@@ -68,6 +31,9 @@ public class telaJogar extends javax.swing.JFrame {
     public telaJogar() {
         initComponents();
         fimTela.setVisible(false);
+        setResizable(false);
+        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -367,19 +333,21 @@ public class telaJogar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                        .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(148, 148, 148)
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabel2)))
+                    .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(letrasIncorretas, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tentativasLb))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(148, 148, 148)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(letrasIncorretas, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tentativasLb))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 24, Short.MAX_VALUE)
@@ -447,7 +415,7 @@ public class telaJogar extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tentativasLb)
-                .addGap(2, 2, 2)
+                .addGap(5, 5, 5)
                 .addComponent(letrasIncorretas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -736,6 +704,17 @@ public class telaJogar extends javax.swing.JFrame {
      * @param args the command line arguments
      */
         
+    public String Sorteia(){
+        try {
+            palavra = objCon.puxaPalavra();
+            //JOptionPane.showMessageDialog(null, "Areré");
+            return palavra;
+        } catch (SQLException ex) {
+            Logger.getLogger(conexao_teste.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     public static void main(String args[]) {
         
         /* Set the Nimbus look and feel */

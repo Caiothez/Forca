@@ -86,7 +86,7 @@ public class conexao_teste extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            objCon.openConnectionMySql();
+            objCon.puxaPalavra();
             JOptionPane.showMessageDialog(null, "Areré");
         } catch (SQLException ex) {
             Logger.getLogger(conexao_teste.class.getName()).log(Level.SEVERE, null, ex);

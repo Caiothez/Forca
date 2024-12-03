@@ -14,7 +14,7 @@ public class conexaoSQL {
     String user = "doctusedtech07";
     String password = "AulaUSF2024";
     //String driver = "com.mysql.jdbc.Driver";
-    public void openConnectionMySql() throws SQLException{
+    public String puxaPalavra() throws SQLException{
         try{
             c = DriverManager.getConnection(url, user, password);
             s = c.createStatement();
@@ -22,12 +22,13 @@ public class conexaoSQL {
             String SQL = "SELECT T2_PALAVRA from T2_PALAVRA WHERE T2_ID =" +n;
             ResultSet result = s.executeQuery(SQL);
                     while(result.next()){
-                        System.out.println(result.getString(1));
-                        
+                        //System.out.println(result.getString(1));
+                        return result.getString(1);
                     }
         }
             catch(SQLException e){
             System.out.println("Falha ao connectar com banco de dados" + e.toString());
             }
+        return null;
     }
 }
