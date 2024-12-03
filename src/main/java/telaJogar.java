@@ -25,6 +25,9 @@ public class telaJogar extends javax.swing.JFrame {
         
         Jogo forca = new Jogo(palavra, 5);
         
+        public int ganhou = forca.getGanhou();
+
+
     /**
      * Creates new form telaJogar
      */
@@ -469,6 +472,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraA.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraA
 
     private void letraBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraBActionPerformed
@@ -478,6 +482,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraB.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraBActionPerformed
 
     private void letraCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraCActionPerformed
@@ -486,7 +491,8 @@ public class telaJogar extends javax.swing.JFrame {
         tentativasLb.setText(forca.TentativasRestantes()); 
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
-        letraC.setEnabled(false);       
+        letraC.setEnabled(false);     
+        verificarResultado();
     }//GEN-LAST:event_letraCActionPerformed
 
     private void letraDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraDActionPerformed
@@ -496,6 +502,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraD.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraDActionPerformed
 
     private void letraEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraEActionPerformed
@@ -505,6 +512,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraE.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraEActionPerformed
 
     private void letraFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraFActionPerformed
@@ -514,6 +522,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraF.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraFActionPerformed
 
     private void letraGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraGActionPerformed
@@ -523,6 +532,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraG.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraGActionPerformed
 
     private void letraHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraHActionPerformed
@@ -532,6 +542,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraH.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraHActionPerformed
 
     private void letraIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraIActionPerformed
@@ -541,6 +552,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraI.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraIActionPerformed
 
     private void letraJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraJActionPerformed
@@ -550,6 +562,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraJ.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraJActionPerformed
 
     private void letraKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraKActionPerformed
@@ -559,6 +572,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraK.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraKActionPerformed
 
     private void letraLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraLActionPerformed
@@ -568,6 +582,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraL.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraLActionPerformed
 
     private void letraMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraMActionPerformed
@@ -577,6 +592,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraM.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraMActionPerformed
 
     private void letraNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraNActionPerformed
@@ -586,6 +602,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraN.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraNActionPerformed
 
     private void letraOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraOActionPerformed
@@ -595,6 +612,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraO.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraOActionPerformed
 
     private void letraPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraPActionPerformed
@@ -604,6 +622,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraP.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraPActionPerformed
 
     private void letraQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraQActionPerformed
@@ -613,6 +632,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraQ.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraQActionPerformed
 
     private void letraRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraRActionPerformed
@@ -622,6 +642,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraR.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraRActionPerformed
 
     private void letraSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraSActionPerformed
@@ -631,6 +652,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraS.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraSActionPerformed
 
     private void letraTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraTActionPerformed
@@ -640,6 +662,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraT.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraTActionPerformed
 
     private void letraUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraUActionPerformed
@@ -649,6 +672,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraU.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraUActionPerformed
 
     private void letraVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraVActionPerformed
@@ -658,6 +682,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraV.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraVActionPerformed
 
     private void letraWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraWActionPerformed
@@ -667,6 +692,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraW.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraWActionPerformed
 
     private void letraXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraXActionPerformed
@@ -676,6 +702,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraX.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraXActionPerformed
 
     private void letraYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraYActionPerformed
@@ -685,6 +712,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraY.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraYActionPerformed
 
     private void letraZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letraZActionPerformed
@@ -694,6 +722,7 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas.setText(forca.letraIncorretas());
         palavraTxt.setText(forca.obterEstadoJogo());
         letraZ.setEnabled(false);
+        verificarResultado();
     }//GEN-LAST:event_letraZActionPerformed
 
     private void botaoContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContinuarActionPerformed
@@ -713,6 +742,15 @@ public class telaJogar extends javax.swing.JFrame {
             Logger.getLogger(conexao_teste.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    public void verificarResultado() {
+        ganhou = forca.getGanhou();
+        if (this.ganhou == 1) {
+            fimTela.setVisible(true);
+        } else if (this.ganhou == 0) {
+            fimTela.setVisible(true);
+        }
     }
     
     public static void main(String args[]) {
