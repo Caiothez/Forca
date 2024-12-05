@@ -4,7 +4,6 @@
  */
 import com.mycompany.forca.Jogo;
 import com.mycompany.forca.conexaoSQL;
-import com.mycompany.forca.conexao_teste;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -35,8 +34,7 @@ public class telaJogar extends javax.swing.JFrame {
         initComponents();
         fimTela.setVisible(false);
         setResizable(false);
-        setLocationRelativeTo(null);
-        
+        setLocationRelativeTo(null);        
     }
 
     /**
@@ -60,7 +58,7 @@ public class telaJogar extends javax.swing.JFrame {
         letraH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         letraI = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        temaLb = new javax.swing.JLabel();
         letraJ = new javax.swing.JButton();
         letraK = new javax.swing.JButton();
         letraU = new javax.swing.JButton();
@@ -85,6 +83,11 @@ public class telaJogar extends javax.swing.JFrame {
         letrasIncorretas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         letraQ.setText("Q");
         letraQ.addActionListener(new java.awt.event.ActionListener() {
@@ -166,9 +169,9 @@ public class telaJogar extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel2.setText("Animais");
+        temaLb.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
+        temaLb.setForeground(new java.awt.Color(255, 51, 51));
+        temaLb.setText("...");
 
         letraJ.setText("J");
         letraJ.addActionListener(new java.awt.event.ActionListener() {
@@ -339,18 +342,15 @@ public class telaJogar extends javax.swing.JFrame {
                     .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                     .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(temaLb))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letrasIncorretas, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tentativasLb))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(letrasIncorretas, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tentativasLb))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 24, Short.MAX_VALUE)
@@ -415,7 +415,7 @@ public class telaJogar extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(temaLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tentativasLb)
                 .addGap(5, 5, 5)
@@ -729,6 +729,11 @@ public class telaJogar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoContinuarActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        temaLb.setText(temaBanco());
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -739,7 +744,17 @@ public class telaJogar extends javax.swing.JFrame {
             //JOptionPane.showMessageDialog(null, "Areré");
             return palavra;
         } catch (SQLException ex) {
-            Logger.getLogger(conexao_teste.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(telaJogar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public String temaBanco(){
+        try {
+            String tema = objCon.pegaTema();
+            return tema;
+        } catch (SQLException ex) {
+            Logger.getLogger(telaJogar.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -791,7 +806,6 @@ public class telaJogar extends javax.swing.JFrame {
     private javax.swing.JButton botaoSair;
     private javax.swing.JPanel fimTela;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton letraA;
     private javax.swing.JButton letraB;
@@ -821,6 +835,7 @@ public class telaJogar extends javax.swing.JFrame {
     private javax.swing.JButton letraZ;
     private javax.swing.JLabel letrasIncorretas;
     private javax.swing.JTextField palavraTxt;
+    private javax.swing.JLabel temaLb;
     private javax.swing.JLabel tentativasLb;
     // End of variables declaration//GEN-END:variables
 }
