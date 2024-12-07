@@ -26,6 +26,12 @@ public final class Jogo {
         this.palavra = palavra;
         this.verificaEspacos();
     }
+
+    public int getTentativas() {
+        return tentativas;
+    }
+    
+    
     
     public String getPalavra(){
         return this.palavra;
