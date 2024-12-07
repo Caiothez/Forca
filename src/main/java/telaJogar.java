@@ -78,7 +78,7 @@ public class telaJogar extends javax.swing.JFrame {
         tentativasLb = new javax.swing.JLabel();
         fimTela = new javax.swing.JPanel();
         botaoContinuar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        fimLb = new javax.swing.JLabel();
         botaoSair = new javax.swing.JButton();
         letrasIncorretas = new javax.swing.JLabel();
 
@@ -296,10 +296,15 @@ public class telaJogar extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("FIM DE JOGO!");
+        fimLb.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        fimLb.setText("FIM DE JOGO!");
 
         botaoSair.setText("SAIR");
+        botaoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout fimTelaLayout = new javax.swing.GroupLayout(fimTela);
         fimTela.setLayout(fimTelaLayout);
@@ -309,12 +314,12 @@ public class telaJogar extends javax.swing.JFrame {
                 .addGroup(fimTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fimTelaLayout.createSequentialGroup()
                         .addGap(179, 179, 179)
-                        .addComponent(jLabel3))
+                        .addComponent(fimLb))
                     .addGroup(fimTelaLayout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addComponent(botaoContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(fimTelaLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
+                        .addGap(198, 198, 198)
                         .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -322,12 +327,12 @@ public class telaJogar extends javax.swing.JFrame {
             fimTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fimTelaLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fimLb, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoContinuar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(botaoSair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         letrasIncorretas.setText("Letras Incorretas: ");
@@ -339,7 +344,7 @@ public class telaJogar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addComponent(palavraTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
                     .addComponent(fimTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(148, 148, 148)
@@ -727,12 +732,22 @@ public class telaJogar extends javax.swing.JFrame {
 
     private void botaoContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContinuarActionPerformed
         // TODO add your handling code here:
+        telaJogar novoJogo = new telaJogar();
+        novoJogo.setVisible(true);
+        setVisible(false); //you can't see me!
+        dispose(); //Destroy the JFrame object
     }//GEN-LAST:event_botaoContinuarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         temaLb.setText(temaBanco());
     }//GEN-LAST:event_formWindowOpened
+
+    private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
+        // TODO add your handling code here:
+        setVisible(false); //you can't see me!
+        dispose(); //Destroy the JFrame object
+    }//GEN-LAST:event_botaoSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -763,8 +778,10 @@ public class telaJogar extends javax.swing.JFrame {
         ganhou = forca.getGanhou();
         if (this.ganhou == 1) {
             fimTela.setVisible(true);
+            fimLb.setText("   Ganhou!!!");
         } else if (this.ganhou == 0) {
             fimTela.setVisible(true);
+            fimLb.setText("    Perdeu :(");
         }
     }
     
@@ -804,9 +821,9 @@ public class telaJogar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoContinuar;
     private javax.swing.JButton botaoSair;
+    private javax.swing.JLabel fimLb;
     private javax.swing.JPanel fimTela;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton letraA;
     private javax.swing.JButton letraB;
     private javax.swing.JButton letraC;
