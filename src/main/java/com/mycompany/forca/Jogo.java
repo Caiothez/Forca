@@ -15,14 +15,17 @@ public final class Jogo {
     private String palavra;
     private final boolean[] acertados;
     private int tentativas;
+    private int tentativas2;
     private final ArrayList<Character> tentativasErradas = new ArrayList<>();
     private int ganhou=3;
+    public int player=1;
     
     public Jogo(String palavra, int tentativas){
         int size = palavra.length();
         this.acertados = new boolean[size];
         
         this.tentativas = tentativas;
+        this.tentativas2 = tentativas;
         this.palavra = palavra;
         this.verificaEspacos();
     }
@@ -31,7 +34,9 @@ public final class Jogo {
         return tentativas;
     }
     
-    
+    public int getTentativas2() {
+        return tentativas2;
+    }
     
     public String getPalavra(){
         return this.palavra;
@@ -167,8 +172,10 @@ public final class Jogo {
             }
         }
        if(acertos == 0){
-            this.tentativas--;
+           if(this.player == 1)this.tentativas--;
+           if(this.player == 2)this.tentativas2--;
             this.tentativasErradas.add(letra);
+            this.player = (this.player == 1) ? 2 : 1;
         }
     }
     
@@ -207,6 +214,11 @@ public final class Jogo {
             return true;
         }
         
+        if(this.tentativas2 <= 0){
+          this.ganhou = 0;
+            return true;
+        }
+        
         return false;
     }
     
@@ -237,6 +249,9 @@ public final class Jogo {
 }
 public String TentativasRestantes() {
     return "Tentativas restantes: " + this.tentativas;
+}
+public String Tentativas2Restantes() {
+    return "Tentativas restantes: " + this.tentativas2;
 }
 public String letraIncorretas() {
     StringBuilder incorretas = new StringBuilder();
